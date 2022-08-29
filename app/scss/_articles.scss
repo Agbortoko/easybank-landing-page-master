@@ -1,0 +1,71 @@
+@use 'mixins' as media;
+
+.articles{
+
+    background-color: var(--veryLightGray);
+
+    &__grid{
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1.875rem;
+          // grid-template-columns: repeat(auto-fit, minmax(14.375rem, 1fr));
+
+        @include media.breakpoint-up(medium){
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @include media.breakpoint-up(large){
+            grid-template-columns: repeat(4, 1fr);
+        }
+    }
+
+    &__item{
+      border-radius: 0.3125rem;
+      overflow: hidden;
+      background-color: var(--white);
+      box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+      min-height: 25rem;
+      transition: all 150ms ease-in-out;
+
+      &:hover{
+        transform: scale(1.05);
+      }
+    }
+
+    &__image{
+        min-height: 12.5rem;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+    }
+
+    &__text{
+        padding: 1.875rem 1.875rem 2.5rem 1.875rem;
+        color: var(--grayishBlue);
+        @include media.breakpoint-up(medium){
+            padding: 1.875rem 1.5625rem;
+        }
+    }
+
+    &__author{
+        font-size: 0.625rem;
+        margin-bottom: 0.75rem;
+    }
+
+    &__title{
+        font-size: 1.0625rem;
+        line-height: 1.2rem;
+        color: var(--darkBlue);
+        margin-bottom: 0.5rem;
+        transition: all 150ms ease-in-out;
+
+        &:hover{
+            color: var(--limeGreen);
+        }
+    }
+
+    &__description{
+        font-size: 0.8125rem;
+    }
+
+}

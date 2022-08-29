@@ -1,0 +1,18 @@
+.attribution{
+
+    background-color: var(--darkBlue);
+    color: var(--white);
+    text-align: center;
+    padding: 1.5rem 0;
+    font-size: 0.875rem;
+    
+    a{
+        color: var(--white);
+        text-decoration: underline;
+        transition: color 150ms ease-in-out;
+
+        &:hover{
+            color: var(--limeGreen);
+        }
+    }
+}
